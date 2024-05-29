@@ -22,7 +22,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -77,6 +77,7 @@
       <workItem from="1716898546934" duration="9619000" />
       <workItem from="1716945156331" duration="1384000" />
       <workItem from="1716950776899" duration="6902000" />
+      <workItem from="1716958476080" duration="84000" />
     </task>
     <servers />
   </component>
