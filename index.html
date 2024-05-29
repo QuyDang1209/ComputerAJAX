@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+<button type="button" onclick="showFormCreate()">Create new Computer</button>
+<form style="display: none" id="form-create">
+    <input id="code" type="text" placeholder="Enter Code"> <br>
+    <input id="name" type="text" placeholder="Enter Name"> <br>
+    <input id="producer" type="text" placeholder="Enter Producer"><br>
+    <select name = "type" id="type">
+        <option value="1">IOS</option>
+        <option value="2">WINDOW</option>
+    </select> <br>
+    <button type="button" onclick="createrNewComputer()">Save</button>
+    <button onclick="getAllComputer()">Cancel</button>
+</form>
+
+<table>
+    <thead>
+    <tr>
+        <th>CODE</th>
+        <th>NAME</th>
+        <th>PRODUCER</th>
+        <th>TYPE</th>
+        <th>ACTION</th>
+    </tr>
+    </thead>
+    <tbody id="tb-computer">
+    </tbody>
+</table>
+<form style="display: none"  id="form-update">
+
+</form>
+
+</body>
+</html>
