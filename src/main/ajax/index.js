@@ -1,4 +1,33 @@
 getAllComputer();
+function getAllType(){
+    $.ajax({
+        type: "get",
+        url:"http://localhost:8080/api/type",
+        success: function (data){
+        let arrType = data.map((t,i,arrt) =>{
+            return `
+            <option value="${t.id}">${t.type}</option>
+            `;
+            })
+            $("#type").html(arrType.join(""))
+            $("#type1").html(arrType.join(""))
+        }
+    })
+}
+function getAllTypeSelected(computer){
+    $.ajax({
+        type: "get",
+        url:"http://localhost:8080/api/type",
+        success: function (data){
+            let arrType = data.map((t,i,arrt) =>{
+                return `
+            <option value="${t.id}" ${computer.type.id === t.id ? "selected" : ""}>${t.type}</option>
+            `;
+            })
+            $("#type1").html(arrType.join(""))
+        }
+    })
+}
 function getAllComputer(){
     $.ajax({
         url: "http://localhost:8080/api/computer",
@@ -23,13 +52,15 @@ function getAllComputer(){
     });
 }
 function showFormCreate(){
-    $("#form-create").show();
+    getAllType()
 }
 function createrNewComputer(){
+
     let code = $("#code").val()
     let name = $("#name").val()
     let producer = $("#producer").val()
     let type = $("#type").val()
+
     $.ajax({
         url: "http://localhost:8080/api/computer",
         type: "post",
@@ -43,7 +74,8 @@ function createrNewComputer(){
             }
 
         }),
-        success: getAllComputer
+        success:
+        getAllComputer
 
     })
 }
@@ -63,21 +95,20 @@ function showFormUpdate(id){
         type: "get",
         url: "http://localhost:8080/api/computer/" +id,
         success: function (data){
+
             let strFrmUpdate =  `
-            <input id="code1" type="text" placeholder="${data.code}"> <br>
-            <input id="name1" type="text" placeholder="${data.name}"> <br>
-            <input id="producer1" type="text" placeholder="${data.producer}"><br>
+            <input id="code1" type="text" placeholder="" value="${data.code}"> <br>
+            <input id="name1" type="text" placeholder="" value="${data.name}"> <br>
+            <input id="producer1" type="text" placeholder="" value="${data.producer}"><br>
             <select name = "type" id="type1">
-                <option value="1">IOS</option>
-                <option value="2">WINDOW</option>
             </select> <br>
             <button type="button" onclick="updateComputer(${data.id})">Save</button>
             <button onclick="getAllComputer()">Cancel</button>
             `;
             $("#form-update").html(strFrmUpdate);
             $("#form-update").show();
+            getAllTypeSelected(data)
 
-            // $("#form-update").
         }
     })
 

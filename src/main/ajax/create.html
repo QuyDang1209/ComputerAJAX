@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+<form  id="form-create">
+    <label for="code">CODE</label>
+    <input id="code" type="text" placeholder="Enter Code"> <br>
+    <label for="name">NAME</label>
+    <input id="name" type="text" placeholder="Enter Name"> <br>
+    <label for="producer"> PRODUCER</label>
+    <input id="producer" type="text" placeholder="Enter Producer"><br>
+    <label for="type">TYPE</label>
+    <select name = "type" id="type" >
+    </select> <br>
+    <button type="button" onclick="createrNewComputer()"><a href="index.html">Save</a></button>
+    <button><a href="index.html">Cancel</a></button>
+
+
+</form>
+</body>
+<script>
+    getAllType();
+    createrNewComputer();
+</script>
+</html>
